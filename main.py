@@ -10,7 +10,7 @@ savollar = [
   ("Translate: Ular televizor kurishayotgan edilar.","They were watching tv."),
   ("She is ___ honest person. (a/an)","a"),
   ("What is the opposite of always?","never"),
-  ("Synonym of important?","essential"),
+  ("Synonym of 'important'?","essential"),
   ("If I ___ rich, I woul travel the world.","were"),
   ("Who writes the book?","author")
 ]
