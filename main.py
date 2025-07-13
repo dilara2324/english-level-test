@@ -1,0 +1,83 @@
+import tkinter as tk
+from tkinter import messagebox
+# Savollar va javoblar
+import tkinter as tk
+from tkinter import messagebox
+# Savollar va javoblar
+import tkinter as tk
+from tkinter import messagebox
+# Savollar va javoblar
+savollar = [
+("What is the English word for 'olma'?","apple"),
+("Complete: I ___ a student." , "am"),
+("What is the plural of book?", "books"),
+("Translate: Men har kuni suv ichaman.", "I drink water every day."),
+("There ___ two cats in the room.", "are"),
+("Past tense of go?", "went"),
+("Translate: Ular televizor kurishayotgan edilar.", "They were watching TV."), ("She is ___ honest person. (a/an)", "a"),
+("What is the opposite of always?", "never"),
+("Synonym of important?", "essential"),
+("If I ___ rich, I would travel the world.","were"),
+("Who writes the book?", "author")
+
+]
+
+# Bosh oynani yaratamiz
+window = tk.Tk()
+window.title("English Level Test 🎓")
+window.geometry("600x400")
+window.config(bg="#f0f0ff")
+
+index = 0
+score= 0
+
+
+       
+def finish():
+    global score 
+    daraja = ""
+    if score >= 11:
+        daraja = "C1+ 🔥 Excellent!"
+    elif score >= 9:
+        daraja = "B2 💪 Great!"
+    elif score >= 7:
+        daraja = "B1 👏 Well done!"  
+    elif score >= 4:
+        daraja = "A2 💜🫰 Keep going!"
+    else:
+        daraja = "A1 😊 You can do better!"
+
+    # Bu qatorni funksiya ichida yozamiz va to‘g‘ri o‘zgaruvchi bilan
+    messagebox.showinfo("Test completed!", f"You got {score}/12.\nLevel: {daraja}")
+    window.destroy()
+   
+
+def tekshir():
+  global index, score
+  if index >= len(savollar):
+      return   # Ortiqcha bosilsa, hech narsa qilmaydi
+  
+  javob = javob_entry.get().strip().lower()
+  togrisi = savollar[index][1].strip().lower()
+ 
+  if javob == togrisi:
+      score += 1
+  
+  javob_entry.delete(0, tk.END)
+  index += 1
+  
+  if index < len(savollar):
+      savol_label.config(text=f"{index+1}. {savollar[index][0]}")
+  else:
+      finish()
+
+# GUI elementlari
+sarlavha_label = tk.Label(window, text="English Level Test 🎓", font=("Arial", 16, "bold"), bg="#f0f0ff")
+sarlavha_label.pack(pady=10)
+
+savol_label = tk.Label(window, text=f"1. {savollar[0][0]}", font=("Arial", 14), bg="#f0f0ff")
+savol_label.pack(pady=10)
+
+javob_entry = tk.Entry(window, font=("Arial", 14))
+javob_entry.pack(pady=10)
+
