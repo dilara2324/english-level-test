@@ -1,3 +1,5 @@
+import streamlit as st
+
 # Savollar va to'g'ri javoblar
 savollar = [
   (" What is the English word for 'olma'?","apple"),
